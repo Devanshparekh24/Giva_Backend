@@ -1,19 +1,18 @@
-import express from "express";
-import { connectDB, prisma } from "./src/db/index.js";
-
-const app = express();
+import { connectDB } from "./src/db/index.js";
+import app from "./app.js";
 
 const startServer = async () => {
-  await connectDB();
+  try {
 
-  app.get("/", async (req, res) => {
-    const users = await prisma.user.findMany();
-    res.json(users);
-  });
+    await connectDB();
+    app.listen(process.env.PORT || 5000, () => {
+      console.log(`🚀 Server running on http://localhost:${process.env.PORT}`);
+    });
+  } catch (error) {
+      console.log('Postregre Conne');
+      
+  }
 
-  app.listen(5000, () => {
-    console.log("🚀 Server running on http://localhost:5000");
-  });
 };
 
 startServer();

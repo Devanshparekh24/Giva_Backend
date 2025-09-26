@@ -16,8 +16,30 @@ datasource db {
 
 model User {
   id        Int      @id @default(autoincrement())
-  email     String   
+  email     String
   name      String?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+}
+
+model NavbarMenu {
+  Navid    BigInt    @id @default(autoincrement())
+  title    String
+  subMenus SubMenu[] // relation to SubMenu table
+}
+
+model SubMenu {
+  NavSubid     BigInt        @id @default(autoincrement())
+  title        String
+  navbarMenu   NavbarMenu    @relation(fields: [navbarMenuId], references: [Navid])
+  navbarMenuId BigInt
+  submenuItems SubMenuItem[] // relation to SubMenuItem table
+}
+
+model SubMenuItem {
+  NavSubItemid BigInt  @id @default(autoincrement())
+  title        String
+  link         String
+  subMenu      SubMenu @relation(fields: [subMenuId], references: [NavSubid])
+  subMenuId    BigInt
 }

@@ -9,7 +9,6 @@ export const getUsers =asyncHandler( async (req, res) => {
     const users = await prisma.user.findMany(); // user = model from schema.prisma
 
     res.status(200).json(
-
       new ApiResponse(200,users,'Get All The User'),
       
     

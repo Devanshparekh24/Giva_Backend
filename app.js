@@ -4,7 +4,7 @@ import userRouter from "./src/routes/user.routes.js";
 import navbarRouter from './src/routes/navbarData.route.js'
 
 const app = express();
-
+    
 
 app.use(cors({ origin: "*" }));
 app.use(express.json());

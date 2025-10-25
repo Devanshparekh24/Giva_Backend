@@ -5,25 +5,27 @@
 | Description    |
 | ImageURL       |
 +----------------+
+
+        1
         |
-        | 1
-        |   
-        | *
+        |
+        *
 [ProductMaster]
 +---------------------+
 | ProductID (PK)      |
-| Name                |
 | CategoryID (FK)     |
+| Name                |
 | Description         |
 | BasePrice           |
-| MainImage           |
+| BaseImage           |  <-- main/base image of product
 | Status              |
 | CreatedDate         |
 +---------------------+
+
+        1
         |
-        | 1
-        |   
-        | *
+        |
+        *
 [ProductDetails]
 +---------------------+
 | DetailID (PK)       |
@@ -35,17 +37,17 @@
 | Color               |
 | Price               |
 | StockQty            |
-| AdditionalImage     |
 | CreatedDate         |
 +---------------------+
+
+        1
         |
-        | 1
-        |   
-        | *
-[Images]
+        |
+        *
+[ProductImages]
 +---------------------+
 | ImageID (PK)        |
 | ProductID (FK)      |
-| ImageURL            |
-| IsPrimary           |
+| ImageURL            |  <-- sub / gallery image
+| IsPrimary (boolean) |  <-- optional, highlight main image if needed
 +---------------------+

@@ -1,5 +1,8 @@
+import dotenv from 'dotenv';
 import { connectDB } from "./src/db/index.js";
 import app from "./app.js";
+
+dotenv.config({ path: './.envFile' });
 
 const startServer = async () => {
   try {

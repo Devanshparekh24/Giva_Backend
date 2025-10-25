@@ -1,0 +1,51 @@
+[Category]
++----------------+
+| CategoryID (PK)|
+| Name           |
+| Description    |
+| ImageURL       |
++----------------+
+        |
+        | 1
+        |   
+        | *
+[ProductMaster]
++---------------------+
+| ProductID (PK)      |
+| Name                |
+| CategoryID (FK)     |
+| Description         |
+| BasePrice           |
+| MainImage           |
+| Status              |
+| CreatedDate         |
++---------------------+
+        |
+        | 1
+        |   
+        | *
+[ProductDetails]
++---------------------+
+| DetailID (PK)       |
+| ProductID (FK)      |
+| SKU                 |
+| Weight              |
+| Material            |
+| Size                |
+| Color               |
+| Price               |
+| StockQty            |
+| AdditionalImage     |
+| CreatedDate         |
++---------------------+
+        |
+        | 1
+        |   
+        | *
+[Images]
++---------------------+
+| ImageID (PK)        |
+| ProductID (FK)      |
+| ImageURL            |
+| IsPrimary           |
++---------------------+

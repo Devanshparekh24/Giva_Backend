@@ -1,16 +1,3 @@
-
-
-# This was inserted by `prisma init`:
-# Environment variables declared in this file are automatically made available to Prisma.
-# See the documentation for more detail: https://pris.ly/d/prisma-schema#accessing-environment-variables-from-the-schema
-
-# Prisma supports the native connection string format for PostgreSQL, MySQL, SQLite, SQL Server, MongoDB and CockroachDB.
-# See the documentation for all the connection string options: https://pris.ly/d/connection-strings
-
-# The following `prisma+postgres` URL is similar to the URL produced by running a local Prisma Postgres 
-# server with the `prisma dev` CLI command, when not choosing any non-default ports or settings. The API key, unlike the 
-# one found in a remote Prisma Postgres URL, does not contain any sensitive information.
-
 PORT=5000
 
 DATABASE_USER=postgres
@@ -22,3 +9,8 @@ DATABASE_NAME=Test
 
 DATABASE_URL="postgresql://${DATABASE_USER}:${DATABASE_PASSWORD}@${DATABASE_HOST}:${DATABASE_PORT}/${DATABASE_NAME}?schema=public"
 
+
+# ImageKit Configuration
+IMAGEKIT_PUBLIC_KEY=public_b/ToDi7Bej+UY49T6Sa1eMFO/bU=your_public_key
+IMAGEKIT_PRIVATE_KEY=private_X7kfYfS/Evu9ifEr7unsTLW8klY=
+IMAGEKIT_URL_ENDPOINT=https://ik.imagekit.io/odtre34u0

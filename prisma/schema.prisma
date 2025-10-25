@@ -43,3 +43,4 @@ model SubMenuItem {
   subMenu      SubMenu @relation(fields: [subMenuId], references: [NavSubid])
   subMenuId    BigInt
 }
+

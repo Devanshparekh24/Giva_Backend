@@ -21,7 +21,8 @@ async function seedNavbarData() {
                 create: [
                   { title: 'Engagement Rings', link: '/rings/engagement' },
                   { title: 'Wedding Rings', link: '/rings/wedding' },
-                  { title: 'Fashion Rings', link: '/rings/fashion' }
+                  { title: 'Fashion Rings', link: '/rings/fashion' },
+                  
                 ]
               }
             },
@@ -86,6 +87,11 @@ async function seedNavbarData() {
         title: 'Gold with Lab Diamonds'
       }
     });
+     await prisma.navbarMenu.create({
+      data: {
+        title: 'Mens Jewllery'
+      }
+    });
 
     await prisma.navbarMenu.create({
       data: {
@@ -108,7 +114,7 @@ async function seedNavbarData() {
     console.log('- GIVA Gift Card');
 
   } catch (error) {
-    console.error('❌ Error seeding navbar data:', error);
+    console.error('❌ Error   navbar data:', error);
   } finally {
     await prisma.$disconnect();
   }
